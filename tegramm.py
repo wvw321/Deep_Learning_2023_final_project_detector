@@ -3,8 +3,8 @@ import requests
 from ultralytics import YOLO
 import urllib
 import numpy as np
-token="1390186228:AAGmiJn0RyNSOOmefo-ACSnNCZkP-idxGgM"
-bot = telebot.TeleBot("1390186228:AAGmiJn0RyNSOOmefo-ACSnNCZkP-idxGgM")
+from config import token
+bot = telebot.TeleBot(token)
 filepath="files/"
 model=YOLO("yolov8n.pt")
 
