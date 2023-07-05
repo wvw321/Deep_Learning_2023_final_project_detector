@@ -1,5 +1,5 @@
 import torch
-
+import cv2
 
 def xywh_to_xcyc(results):
     for i, result in enumerate(results):
@@ -45,3 +45,15 @@ def disp(resultsL, resultsR):
         resultsL[i].boxes.disp = torch.tensor(dispp).unsqueeze(1)
 
     return resultsL
+
+
+def draw_fps(img, fps, avg=False, list=[]):
+    if avg is False:
+        cv2.putText(img, "fps " + str(fps), (0, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 0), 4)
+        return
+    if avg is True:
+        list.append(fps)
+        if len(list) > 30:
+            list.pop(0)
+        avg_fps = sum(list) // len(list)
+        cv2.putText(img, "AVG_Fps" + str(avg_fps), (0, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 0), 4)
