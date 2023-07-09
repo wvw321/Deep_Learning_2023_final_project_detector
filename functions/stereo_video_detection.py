@@ -3,10 +3,10 @@ import cv2
 from ultralytics.yolo.utils.plotting import Annotator
 import numpy as np
 import functions as fn
-from stereo import load_stereomap , remap, video_capture
+from test.stereo import video_capture
 import time
 
-model = YOLO('yolov8n.pt')
+model = YOLO('../yolov8n.pt')
 
 def detect(path,model):
 
@@ -14,7 +14,7 @@ def detect(path,model):
 
 
     # out = cv2.VideoWriter('output_stereo_video.avi', fourcc, 30.0, (2560, 720))
-    out = cv2.VideoWriter('output_stereo_video_detected.mp4', cv2.VideoWriter_fourcc(*'MP4V'), 30,
+    out = cv2.VideoWriter('../output_stereo_video_detected.mp4', cv2.VideoWriter_fourcc(*'MP4V'), 30,
                           (1280, 720))
     while cap.isOpened():
         start_time = time.time()

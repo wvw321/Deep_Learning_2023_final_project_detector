@@ -13,9 +13,9 @@ import numpy as np
 
 
 
-model = YOLO("yolov8n.pt")
+model = YOLO("../yolov8n.pt")
 
-frame=cv2.imread("1.png")
+frame=cv2.imread("../1.png")
 imgLeft, imgRight = np.split(frame, 2, axis=1)
 
 

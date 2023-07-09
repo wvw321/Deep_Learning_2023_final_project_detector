@@ -1,8 +1,6 @@
 import cv2
-import time
 import numpy as np
-import functions as fn
-from stereo import load_stereomap , remap, video_capture
+from test.stereo import load_stereomap , remap, video_capture
 
 
 
@@ -10,7 +8,7 @@ from stereo import load_stereomap , remap, video_capture
 cap = video_capture("output.avi",(2560, 720))
 
 # out = cv2.VideoWriter('output_stereo.avi', fourcc, 30.0, (2560, 720))
-out = cv2.VideoWriter('output_stereo.mp4', cv2.VideoWriter_fourcc(*'MP4V'), 30,
+out = cv2.VideoWriter('../output_stereo.mp4', cv2.VideoWriter_fourcc(*'MP4V'), 30,
                       (2560, 720))
 stereoMap = load_stereomap("stereoMap1280x720.xml")
 while True:

@@ -1,10 +1,8 @@
 import telebot
 import requests
 from ultralytics import YOLO
-import urllib
-import numpy as np
 from config import token
-from stereo_video_detection import detect
+from functions.stereo_video_detection import detect
 
 bot = telebot.TeleBot(token)
 filepath = "files/"
