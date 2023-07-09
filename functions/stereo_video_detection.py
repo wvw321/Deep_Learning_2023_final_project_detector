@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import cv2
 from ultralytics.yolo.utils.plotting import Annotator
 import numpy as np
-import functions as fn
+import functions.functions as fn
 from test.stereo import video_capture
 import time
 
